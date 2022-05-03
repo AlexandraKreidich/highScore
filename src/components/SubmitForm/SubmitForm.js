@@ -12,7 +12,7 @@ export function SubmitForm(props) {
   }
 
   return (<div>
-    <input value={name} onChange={onChange}></input>
+    <input placeholder='name' value={name} onChange={onChange}></input>
     <button onClick={onClick}>send!</button>
   </div>);
 }

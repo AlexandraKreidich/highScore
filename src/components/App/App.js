@@ -17,7 +17,7 @@ export function App() {
   return (
     <div className="App">
       <Generator onClick={handleClick}></Generator>
-      <h2>{sum}</h2>
+      <h2>Sum: {sum}</h2>
       <SubmitForm onSubmit={onSubmit}></SubmitForm>
     </div>
   );

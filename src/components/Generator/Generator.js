@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styles from './Generator.module.css';
 
 export function Generator(props) {
   const [clicksCount, setClicksCount] = useState(0);
@@ -14,9 +15,9 @@ export function Generator(props) {
   };
 
   return (
-    <div>
-      <button disabled={clicksCount === 10} onClick={handleClick}>+-Click</button>
-      <p>{clicksCount}</p>
+    <div className={styles.container}>
+      <button className={styles.button} disabled={clicksCount === 10} onClick={handleClick}>+-Click</button>
+      <p>Clicks done: {clicksCount}</p>
     </div>
   )
 }
