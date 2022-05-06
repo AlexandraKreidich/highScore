@@ -11,6 +11,7 @@ export function SubmitForm(props) {
 
   const onClick = () => {
     props.onSubmit(name);
+    setName('');
   }
 
   return (<div className={styles.submitForm}>
