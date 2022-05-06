@@ -13,9 +13,18 @@
   background-color: var(--primary100);
 }
 
-.primary:disabled {
+.button:disabled {
   cursor: default;
   opacity: 0.5;
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: var(--primary40) 0px 0px 1px 2px;
+}
+
+.button:active:enabled {
+  transform: translateY(1px);
 }
 
 .primary:hover:enabled {
@@ -27,11 +36,6 @@
   border: 1px solid var(--shade40);
   color: var(--default-color);
   background-color: transparent;
-}
-
-.default:disabled {
-  cursor: default;
-  opacity: 0.5;
 }
 
 .default:hover:enabled {
