@@ -1,0 +1,24 @@
+.submitForm {
+  display: grid;
+  grid-template-rows: 100%;
+  grid-template-columns: 70% 20%;
+  align-items: center;
+  gap: 2rem;
+}
+
+.input {
+  border: 1px solid var(--shade60);
+  border-radius: 4px;
+  outline: 0px;
+  box-shadow: rgba(0, 0, 0, 0.078) 0px 1px 1px 0px inset;
+  font-size: 0.875rem;
+  background-color: var(--secondary-color);
+  width: 100%;
+  color: var(--shade100);
+  font-weight: 200;
+  padding: 7px 10px;
+  margin: 0px;
+  text-align: start;
+  text-indent: 0px;
+  height: 32px;
+}

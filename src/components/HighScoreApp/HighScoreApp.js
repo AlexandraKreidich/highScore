@@ -18,7 +18,7 @@ export function HighScoreApp() {
     <div className='App'>
       <div className='play'>
         <Generator onClick={handleClick}></Generator>
-        <h2>Sum: {sum}</h2>
+        <h2>Your score: {sum}</h2>
         <SubmitForm onSubmit={onSubmit}></SubmitForm>
       </div>
       <div className='rating'></div>

@@ -10,10 +10,11 @@
 
 .play {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 25rem;
   grid-template-rows: repeat(3, min-content);
-  justify-items: center;
+  align-items: center;
   gap: 2rem;
+  margin: 0 auto;
 }
 
 .rating {}

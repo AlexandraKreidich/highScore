@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { Button } from '../Button/Button';
+import styles from './SubmitForm.module.css';
 
 export function SubmitForm(props) {
   const [name, setName] = useState('');
@@ -11,8 +13,8 @@ export function SubmitForm(props) {
     props.onSubmit(name);
   }
 
-  return (<div>
-    <input placeholder='name' value={name} onChange={onChange}></input>
-    <button onClick={onClick}>send!</button>
+  return (<div className={styles.submitForm}>
+    <input className={styles.input} placeholder='name' value={name} onChange={onChange}></input>
+    <Button type='primary' disabled={name === ''} onClick={onClick}>send!</Button>
   </div>);
 }

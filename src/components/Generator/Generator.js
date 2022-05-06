@@ -5,8 +5,10 @@ import styles from './Generator.module.css';
 export function Generator(props) {
   const [clicksCount, setClicksCount] = useState(0);
 
+  const MAX_CLICKS_AMOUNT = 10;
+
   const handleClick = () => {
-    if (clicksCount < 10) {
+    if (clicksCount < MAX_CLICKS_AMOUNT) {
       const random = Math.round(Math.random());
       let isNegative = random === 0;
       setClicksCount(clicksCount + 1);
@@ -18,7 +20,7 @@ export function Generator(props) {
   return (
     <div className={styles.container}>
       <Button type='default' disabled={clicksCount === 10} onClick={handleClick}>+- Click</Button>
-      <p>Clicks done: {clicksCount}</p>
+      <p>Clicks left: {MAX_CLICKS_AMOUNT - clicksCount}</p>
     </div>
   )
 }
