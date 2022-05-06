@@ -1,0 +1,39 @@
+.button {
+  appearance: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  transition: all 0.15s linear 0s;
+  padding: 0.5rem 1rem;
+}
+
+.primary {
+  border: 1px solid var(--primary100);
+  color: var(--secondary-color);
+  background-color: var(--primary100);
+}
+
+.primary:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.primary:hover:enabled {
+  background-color: var(--primary80);
+  border-color: var(--primary80);
+}
+
+.default {
+  border: 1px solid var(--shade40);
+  color: var(--default-color);
+  background-color: transparent;
+}
+
+.default:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.default:hover:enabled {
+  background-color: var(--shade40);
+}
