@@ -1,9 +1,9 @@
-import './App.css';
+import './HighScoreApp.css';
 import { useState } from 'react';
 import Generator from '../Generator';
 import SubmitForm from '../SubmitForm';
 
-export function App() {
+export function HighScoreApp() {
   const [sum, setSum] = useState(0);
 
   const handleClick = (number) => {
