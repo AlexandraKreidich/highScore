@@ -18,6 +18,6 @@ export function SubmitForm(props) {
       <label className={styles.label}>Name</label>
       <input className={styles.input} value={name} onChange={onChange}></input>
     </div>
-    <Button type='primary' disabled={name === ''} onClick={onClick}>send!</Button>
+    <Button type='primary' disabled={name === ''} onClick={onClick}>Send</Button>
   </div>);
 }
