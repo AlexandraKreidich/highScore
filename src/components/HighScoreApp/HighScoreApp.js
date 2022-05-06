@@ -1,8 +1,8 @@
 import styles from './HighScoreApp.module.css';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Generator from '../Generator';
 import SubmitForm from '../SubmitForm';
-import { fetchRecords } from '../../api/RecordsAPI';
+import * as recordsAPI from '../../api/RecordsAPI';
 import { RecordsTable } from '../RecordsTable/RecordsTable';
 
 export function HighScoreApp() {
@@ -15,30 +15,40 @@ export function HighScoreApp() {
   const [isError, setIsError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
-  useEffect(() => {
-    setRecordsLoading(true);
-    try {
-      fetchRecords().then(data => {
+  const fetchRecords = useCallback(
+    async () => {
+      try {
+        const data = await recordsAPI.fetchRecords();
         setRecords(data);
         setRecordsLoading(false);
-      });
-    }
-    catch (e) {
-      setRecordsLoading(false);
-      setIsError(true);
-      setErrorMessage(e);
-    }
-  }, [])
+      } catch (error) {
+        setRecordsLoading(false);
+        setIsError(true);
+        setErrorMessage(error);
+      }
+    },
+    []
+  )
 
+  useEffect(() => {
+    setRecordsLoading(true);
+    fetchRecords();
+  }, [fetchRecords])
 
   const handleClick = (number) => {
     setSum(sum + number);
     setClicksCount(clicksCount + 1);
   };
 
-  const onSubmit = (name) => {
-    console.log(name, sum);
-    reset();
+  const onSubmit = async (name) => {
+    try {
+      await recordsAPI.createRecord({ name, totalPoints: sum, clicks: clicksCount });
+      await fetchRecords();
+      reset();
+    }
+    catch (e) {
+      // hook
+    }
   }
 
   const reset = () => {
