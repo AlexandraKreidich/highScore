@@ -1,7 +1,7 @@
-.App {
+.app {
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: auto;
+  grid-template-columns: 50% 50%;
   min-height: 100vh;
   grid-template-areas:
     "play rating";
@@ -10,11 +10,15 @@
 
 .play {
   display: grid;
-  grid-template-columns: 25rem;
+  grid-template-columns: auto;
   grid-template-rows: repeat(3, min-content);
   align-items: center;
+  justify-content: center;
   gap: 2rem;
-  margin: 0 auto;
 }
 
-.rating {}
+.rating {
+  display: grid;
+  grid-template-columns: 70%;
+  grid-template-rows: min-content;
+}

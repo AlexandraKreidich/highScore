@@ -1,0 +1,14 @@
+.container {
+  display: grid;
+  grid-template-columns: auto;
+}
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.headerCell {
+  padding: 16px 24px;
+  font-weight: 500;
+}

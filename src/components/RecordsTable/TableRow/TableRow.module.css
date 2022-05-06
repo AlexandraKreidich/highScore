@@ -1,0 +1,14 @@
+.row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.row:hover {
+  background-color: var(--shade10);
+}
+
+.cell {
+  padding: 16px 24px;
+  border-top: 1px solid var(--shade40);
+  font-weight: 200;
+}
