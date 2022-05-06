@@ -1,3 +1,5 @@
+import { sortRecords } from '../utils/sortRecords';
+
 let data = [
   { name: "Jane Doe", totalPoints: 157, clicks: 5 },
   { name: "Lily Allen", totalPoints: 234, clicks: 8 },
@@ -7,10 +9,8 @@ let data = [
 export async function fetchRecords(sort = 'desc', sortField = 'clicks', limit = 10) {
   return new Promise((resolve, reject) => {
     try {
-      //sort
-
       setTimeout(() => {
-        resolve(data);
+        resolve(sortRecords(data, 'totalPoints'));
       }, 1000);
     }
     catch (e) {
