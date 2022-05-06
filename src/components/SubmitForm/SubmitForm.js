@@ -14,7 +14,10 @@ export function SubmitForm(props) {
   }
 
   return (<div className={styles.submitForm}>
-    <input className={styles.input} placeholder='name' value={name} onChange={onChange}></input>
+    <div>
+      <label className={styles.label}>Name</label>
+      <input className={styles.input} value={name} onChange={onChange}></input>
+    </div>
     <Button type='primary' disabled={name === ''} onClick={onClick}>send!</Button>
   </div>);
 }

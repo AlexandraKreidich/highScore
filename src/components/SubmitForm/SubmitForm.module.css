@@ -2,8 +2,16 @@
   display: grid;
   grid-template-rows: 100%;
   grid-template-columns: 70% 20%;
-  align-items: center;
+  align-items: end;
   gap: 2rem;
+}
+
+.label {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--shade100);
+  margin-bottom: 0;
+  padding-right: 8px;
 }
 
 .input {
