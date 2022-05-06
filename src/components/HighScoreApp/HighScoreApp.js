@@ -15,10 +15,13 @@ export function HighScoreApp() {
   }
 
   return (
-    <div className="App">
-      <Generator onClick={handleClick}></Generator>
-      <h2>Sum: {sum}</h2>
-      <SubmitForm onSubmit={onSubmit}></SubmitForm>
+    <div className='App'>
+      <div className='play'>
+        <Generator onClick={handleClick}></Generator>
+        <h2>Sum: {sum}</h2>
+        <SubmitForm onSubmit={onSubmit}></SubmitForm>
+      </div>
+      <div className='rating'></div>
     </div>
   );
 }

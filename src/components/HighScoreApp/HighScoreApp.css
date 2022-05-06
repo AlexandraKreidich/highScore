@@ -1,5 +1,19 @@
 .App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto;
+  min-height: 100vh;
+  grid-template-areas:
+    "play rating";
+  margin: 5% auto;
 }
+
+.play {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, min-content);
+  justify-items: center;
+  gap: 2rem;
+}
+
+.rating {}
