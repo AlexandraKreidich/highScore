@@ -4,7 +4,7 @@ export function addAvgPerClickColumn(data) {
       name: elem.name,
       totalPoints: elem.totalPoints,
       clicks: elem.clicks,
-      avgPerClick: Math.floor(elem.totalPoints / elem.clicks)
+      avgPerClick: elem.clicks === 0 ? 0 : Math.floor(elem.totalPoints / elem.clicks)
     }
   });
 }

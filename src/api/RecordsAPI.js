@@ -13,7 +13,7 @@ export async function fetchRecords(sortField = 'totalPoints', limit = 10) {
     try {
       setTimeout(() => {
         const enhancedData = addAvgPerClickColumn(data);
-        resolve(sortRecords(enhancedData, sortField).slice(0, limit - 1));
+        resolve(sortRecords(enhancedData, sortField).slice(0, limit));
       }, 1000);
     }
     catch (e) {

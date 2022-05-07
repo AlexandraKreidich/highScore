@@ -1,0 +1,16 @@
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loadIcon {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  animation: 1s linear 0s infinite normal none running spin;
+}

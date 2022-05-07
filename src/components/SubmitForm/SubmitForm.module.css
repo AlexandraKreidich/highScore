@@ -1,9 +1,8 @@
 .submitForm {
   display: grid;
-  grid-template-rows: 100%;
-  grid-template-columns: 70% 20%;
+  grid-template-columns: 3fr 1fr 1fr;
   align-items: end;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .label {

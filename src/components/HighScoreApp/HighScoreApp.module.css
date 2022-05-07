@@ -5,11 +5,21 @@
   min-height: 100vh;
   grid-template-areas:
     "play rating";
-  margin: 5% auto;
+  margin: 5%;
+}
+
+@media (max-width: 700px) {
+  .app {
+    grid-template-columns: 100%;
+    grid-template-areas:
+      "play"
+      "rating";
+  }
 }
 
 .play {
   display: grid;
+  grid-area: play;
   grid-template-columns: auto;
   grid-template-rows: repeat(3, min-content);
   align-items: center;
@@ -17,8 +27,15 @@
   gap: 2rem;
 }
 
+.middleColumn {
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
 .rating {
+  grid-area: rating;
   display: grid;
-  grid-template-columns: 70%;
   grid-template-rows: min-content;
+  justify-content: center;
+  align-items: center;
 }

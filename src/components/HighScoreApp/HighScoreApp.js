@@ -5,6 +5,7 @@ import SubmitForm from '../SubmitForm';
 import * as recordsAPI from '../../api/RecordsAPI';
 import { RecordsTable } from '../RecordsTable/RecordsTable';
 import { useA } from '../../hooks/use';
+import { Loader } from '../Loader/Loader';
 
 export function HighScoreApp() {
   const [sum, setSum] = useState(0);
@@ -55,10 +56,14 @@ export function HighScoreApp() {
       <div className={styles.play}>
         <Generator clicksCount={clicksCount} onClick={handleClick}></Generator>
         <h2>Your score: {sum}</h2>
-        <SubmitForm onSubmit={onSubmit} ></SubmitForm>
+        <SubmitForm
+          isError={createRecordError}
+          errorMessage={createRecordErrorMessage}
+          isLoading={createRecordLoading}
+          onSubmit={onSubmit} ></SubmitForm>
       </div>
       <div className={styles.rating}>
-        {recordsLoading && <p>Loading...</p>}
+        {recordsLoading && <Loader></Loader>}
         {!recordsLoading && recordsError && <p>{recordsErrorMessage}</p>}
         {!recordsLoading && !recordsError && records &&
           <RecordsTable

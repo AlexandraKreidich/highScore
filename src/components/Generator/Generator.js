@@ -16,7 +16,7 @@ export function Generator(props) {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${props.className}`}>
       <Button type='default' disabled={props.clicksCount === 10} onClick={handleClick}>+- Click</Button>
       <p>Clicks left: {MAX_CLICKS_AMOUNT - props.clicksCount}</p>
       {props.clicksCount === 10 &&
@@ -29,5 +29,6 @@ export function Generator(props) {
 
 Generator.propTypes = {
   clicksCount: PropTypes.number,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  className: PropTypes.string
 };
