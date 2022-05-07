@@ -5,10 +5,34 @@
 
 .tableHeader {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .headerCell {
   padding: 16px 24px;
   font-weight: 500;
+  position: relative;
+  cursor: pointer;
+}
+
+.headerCell.sortable:hover {
+  background-color: var(--shade10);
+}
+
+.dot {
+  height: 5px;
+  width: 5px;
+  background-color: var(--main-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 45%;
+  right: 9%;
+}
+
+.dot.invisible {
+  display: none;
+}
+
+.dot.visible {
+  display: block;
 }
