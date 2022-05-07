@@ -3,7 +3,7 @@ import styles from './TableRow.module.css';
 
 export function TableRow(props) {
   return (
-    <div className={styles.row}>
+    <div className={styles.row} data-testid='table-row'>
       {
         Object.keys(props.record).map((key, index) => (
           <div className={styles.cell} key={index}>{props.record[key]}</div>
